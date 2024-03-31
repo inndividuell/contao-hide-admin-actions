@@ -13,16 +13,21 @@
 
     "require": {
         "php": "^8.1",
-        "contao/core-bundle": "^4.13",
-        "symfony/config": "^5.4",
-        "symfony/dependency-injection": "^5.4",
-        "symfony/http-kernel": "^5.4"
+        "contao/core-bundle": "^4.13 || ^5.0",
+        "contao/manager-bundle": "^4.13 || ^5.0",
+        "contao/manager-plugin": "^2.3.1",
+        "doctrine/dbal": "^3.7",
+        "hwi/oauth-bundle": "2.1.*",
+        "symfony/config": "^5.4 || ^6.0",
+        "symfony/dependency-injection": "^5.4 || ^6.0",
+        "symfony/http-foundation": "^5.4 || ^6.0",
+        "symfony/http-kernel": "^5.4 || ^6.0",
+        "symfony/security-bundle": "^5.4 || ^6.0",
+        "symfony/security-core": "^5.4 || ^6.0",
+        "twig/twig": "^3.8"
     },
     "require-dev": {
-        "bamarni/composer-bin-plugin": "^1.5",
-        "contao/manager-plugin": "^2.0",
-        "phpunit/phpunit": "^9.5",
-        "symfony/phpunit-bridge": "^6.1"
+        "bamarni/composer-bin-plugin": "^1.5"
     },
     "conflict": {
         "contao/manager-plugin": "<2.0 || >=3.0"
@@ -30,11 +35,6 @@
     "autoload": {
         "psr-4": {
             "Inndividuell\\HideAdminActions\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Inndividuell\\HideAdminActions\\Tests\\": "tests/"
         }
     },
     "config": {
