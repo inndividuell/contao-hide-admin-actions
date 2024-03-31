@@ -13,9 +13,11 @@ declare(strict_types=1);
 namespace Inndividuell\HideAdminActions\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
+use Contao\ManagerBundle\ContaoManagerBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use HWI\Bundle\OAuthBundle\HWIOAuthBundle;
 use Inndividuell\HideAdminActions\InndividuellHideAdminActionsBundle;
 
 class Plugin implements BundlePluginInterface
@@ -24,7 +26,11 @@ class Plugin implements BundlePluginInterface
     {
         return [
             BundleConfig::create(InndividuellHideAdminActionsBundle::class)
-                ->setLoadAfter([InndividuellHideAdminActionsBundle::class]),
+                ->setLoadAfter([
+                    ContaoCoreBundle::class,
+                    ContaoManagerBundle::class,
+                    HWIOAuthBundle::class,
+                ]),
         ];
     }
 }
