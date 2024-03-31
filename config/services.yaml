@@ -1,15 +1,17 @@
 services:
-  _defaults:
-    autowire: false
-    autoconfigure: false
-    public: false
+    _defaults:
+        autowire: false
+        autoconfigure: false
+        public: false
 
-  inndividuell_hide_admin_actions.contao_manager.plugin:
-    class: Inndividuell\HideAdminActions\ContaoManager\Plugin
+    inndividuell_hide_admin_actions.contao_manager.plugin:
+        class: Inndividuell\HideAdminActions\ContaoManager\Plugin
 
-  inndividuell_hide_admin_actions.event_listener.hide_copy_user_action_listener:
-    class: Inndividuell\HideAdminActions\EventListener\HideAdminUserSu
-    arguments:
-      - '@security.helper'
-    tags:
-      - { name: contao.callback, table: tl_user, target: list.operations.su.button }
+
+    inndividuell_hide_admin_actions.event_listener.hide_copy_user_action_listener:
+        class: Inndividuell\HideAdminActions\EventListener\HideAdminUserSu
+        arguments:
+            - '@request_stack'
+            - '@doctrine.dbal.default_connection'
+        tags:
+            - { name: contao.callback, table: tl_user, target: config.onload }
