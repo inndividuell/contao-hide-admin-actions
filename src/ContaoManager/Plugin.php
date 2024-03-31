@@ -29,7 +29,6 @@ class Plugin implements BundlePluginInterface
                 ->setLoadAfter([
                     ContaoCoreBundle::class,
                     ContaoManagerBundle::class,
-                    HWIOAuthBundle::class,
                 ]),
         ];
     }
