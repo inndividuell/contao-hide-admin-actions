@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: false
+    autoconfigure: false
+    public: false
+    inndividuell_hide_admin_actions.event_listener.hide_copy_user_action_listener:
+      class: Inndividuell\HideAdminActions\EventListener\HideAdminUserSu
+      arguments:
+        - '@security.helper'
+      tags:
+        - { name: contao.callback, table: tl_user, target: list.operations.su.button }
