@@ -11,7 +11,6 @@ services:
     inndividuell_hide_admin_actions.event_listener.hide_copy_user_action_listener:
         class: Inndividuell\HideAdminActions\EventListener\HideAdminUserSu
         arguments:
-            - '@request_stack'
-            - '@doctrine.dbal.default_connection'
+            - '@security.helper'
         tags:
-            - { name: contao.callback, table: tl_user, target: config.onload }
+            - { name: contao.callback, table: tl_user, target: list.operations.copy.button }
