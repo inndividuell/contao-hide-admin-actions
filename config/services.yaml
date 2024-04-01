@@ -13,4 +13,4 @@ services:
         arguments:
             - '@security.helper'
         tags:
-            - { name: contao.callback, table: tl_user, target: list.operations.copy.button }
+            - { name: contao.callback, table: tl_user, target: list.operations.su.button }
