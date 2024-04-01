@@ -6,7 +6,7 @@ namespace Inndividuell\HideAdminActions;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class InndividuellHideAdminActionsBundle extends Bundle
+class HideAdminActionsBundle extends Bundle
 {
     public function getPath(): string
     {
