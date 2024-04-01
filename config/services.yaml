@@ -8,9 +8,30 @@ services:
         class: Inndividuell\HideAdminActions\ContaoManager\Plugin
 
 
-    inndividuell_hide_admin_actions.event_listener.hide_copy_user_action_listener:
+    inndividuell_hide_admin_actions.event_listener.hide_su_user_action_listener:
         class: Inndividuell\HideAdminActions\EventListener\HideAdminUserSu
         arguments:
             - '@security.helper'
         tags:
             - { name: contao.callback, table: tl_user, target: list.operations.su.button }
+
+    inndividuell_hide_admin_actions.event_listener.hide_delete_user_action_listener:
+        class: Inndividuell\HideAdminActions\EventListener\HideAdminUserSu
+        arguments:
+            - '@security.helper'
+        tags:
+            - { name: contao.callback, table: tl_user, target: list.operations.delete.button }
+
+    inndividuell_hide_admin_actions.event_listener.hide_edit_user_action_listener:
+        class: Inndividuell\HideAdminActions\EventListener\HideAdminUserSu
+        arguments:
+            - '@security.helper'
+        tags:
+            - { name: contao.callback, table: tl_user, target: list.operations.edit.button }
+
+    inndividuell_hide_admin_actions.event_listener.hide_toggle_user_action_listener:
+        class: Inndividuell\HideAdminActions\EventListener\HideAdminUserSu
+        arguments:
+            - '@security.helper'
+        tags:
+            - { name: contao.callback, table: tl_user, target: list.operations.toggle.button }
