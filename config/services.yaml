@@ -35,3 +35,10 @@ services:
             - '@security.helper'
         tags:
             - { name: contao.callback, table: tl_user, target: list.operations.toggle.button }
+
+    inndividuell_hide_admin_actions.event_listener.hide_copy_user_action_listener:
+        class: Inndividuell\HideAdminActions\EventListener\HideAdminUserSu
+        arguments:
+            - '@security.helper'
+        tags:
+            - { name: contao.callback, table: tl_user, target: list.operations.copy.button }
