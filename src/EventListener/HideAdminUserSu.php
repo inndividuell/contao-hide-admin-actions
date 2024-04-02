@@ -38,6 +38,10 @@ class HideAdminUserSu
         ?string $next,
         DataContainer $dc
     ): string {
+        $user = $this->security->getUser();
+        if($user->id == $row['id']){
+            return ($user->isAdmin || !$row['admin']) ? '<a href="' . Backend::addToUrl($href . '&amp;id=' . $row['id']) . '" title="' . StringUtil::specialchars($title) . '"' . $attributes . '>' . Image::getHtml((string) $icon, $label) . '</a> ' : Image::getHtml(str_replace('.svg', '--disabled.svg', (string) $icon)) . ' ';
+        }
         if ($row['admin'] ?? null) {
             return '';
         }
